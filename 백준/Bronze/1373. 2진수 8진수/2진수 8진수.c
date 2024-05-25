@@ -11,7 +11,7 @@ int main() {
     int j, k = 0;
     int count = 0, temp_sum = 0, n = 0;
     int arr_size = sizeof(num) / sizeof(char);
-    int arr_size2 = sizeof(num8) / sizeof(num8[0]);
+    
     for (i = 0; i < arr_size; i++) {
         num[i] = '0';
     }

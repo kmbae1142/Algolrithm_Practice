@@ -1,33 +1,33 @@
-import queue
+from collections import deque
 import sys
 
-q = queue.Queue()
+q = deque()
 input = sys.stdin.readline
 
 for _ in range(int(input())):
     com = input().rstrip().split()
 
     if com[0] == 'push':
-        q.put(com[-1])
+        q.append(com[-1])
     elif com[0] == 'pop':
-        if q.qsize() == 0:
+        if len(q) == 0:
             print("-1")
         else:
-            print(q.get())
+            print(q.popleft())
     elif com[0] == 'size':
-        print(q.qsize())
+        print(len(q))
     elif com[0] == 'empty':
-        if q.empty():
+        if len(q) == 0:
             print("1")
         else:
             print("0")
     elif com[0] == 'front':
-        if q.empty():
+        if len(q) == 0:
             print("-1")
         else:
-            print(q.queue[0])
+            print(q[0])
     elif com[0] == 'back':
-        if q.empty():
+        if len(q) == 0:
             print("-1")
         else:
-            print(q.queue[-1])
+            print(q[-1])

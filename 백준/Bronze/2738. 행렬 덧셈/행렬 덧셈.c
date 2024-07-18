@@ -10,14 +10,14 @@ int main() {
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            scanf("%d ", &matrix1[i][j]);
+            scanf("%d", &matrix1[i][j]);
         }
         //printf("\n");
     }
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            scanf("%d ", &matrix2[i][j]);
+            scanf("%d", &matrix2[i][j]);
         }
         //printf("\n");
     }

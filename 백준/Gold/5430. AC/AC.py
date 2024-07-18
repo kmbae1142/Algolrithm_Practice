@@ -4,8 +4,8 @@ from collections import deque
 input = sys.stdin.readline
 
 for _ in range(int(input())):
-    func = str(input())
-    func.replace("RR", "")
+    func = input().rstrip()
+    func = func.replace("RR", "")
     n = int(input())
     arr = deque(eval(input()))
     error_check = False
@@ -35,5 +35,4 @@ for _ in range(int(input())):
         if reverse == 1:
             print(str(list(arr)).replace(" ", ""))
         else:
-            arr.reverse()
-            print(str(list(arr)).replace(" ", ""))
+            print(str(list(arr)[::-1]).replace(" ", ""))

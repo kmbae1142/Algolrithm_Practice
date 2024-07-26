@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <math.h>
 #include <stdbool.h>
+#include <math.h>
 
 bool Primes[100000001];
 

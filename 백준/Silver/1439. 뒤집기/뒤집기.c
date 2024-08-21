@@ -6,13 +6,13 @@ int main() {
     char temp = 0;
     int count0 = 0, count1 = 0;
 
-    ch = getchar();  
-    temp = ch;      
+    ch = getchar();
+    temp = ch;
 
     if (temp == '0')
         count0++;
     else if (temp == '1')
-        count1++; 
+        count1++;
 
     while ((ch = getchar()) != '\n') {
         if (ch != temp) {

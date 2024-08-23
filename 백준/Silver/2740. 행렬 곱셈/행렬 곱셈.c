@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+void scan(int arr[][100], int n, int m) {
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			scanf("%d", &arr[i][j]);
+		}
+	}
+}
+
 int main() {
 
 	int arr1[100][100] = { 0, };
@@ -7,18 +16,9 @@ int main() {
 	int n, m, k, temp = 0;
 
 	scanf("%d %d", &n, &m);
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			scanf("%d", &arr1[i][j]);
-		}
-	}
-
+	scan(arr1, n, m);
 	scanf("%d %d", &m, &k);
-	for (int i = 0; i < m; i++) {
-		for (int j = 0; j < k; j++) {
-			scanf("%d", &arr2[i][j]);
-		}
-	}
+	scan(arr2, m, k);
 
 	for (int i = 0; i < n; i++) {
 		for (int l = 0; l < k; l++) {

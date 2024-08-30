@@ -7,7 +7,7 @@ int main() {
 	scanf("%d", &n);
 	for (int i = 1; i < n; i++) {
 		c[i] = c[i - 1] - 4 * b;
-		b = b + c[i - 1];
+		b += c[i - 1];
 	}
 	printf("%lld", c[n - 1]);
 }

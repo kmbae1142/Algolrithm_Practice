@@ -1,22 +1,13 @@
 import sys
 input = sys.stdin.readline
 
-def pivo(n):
+T = int(input())
+dp = [0] * 10001
+dp[1] = dp[2] = 1
 
-    if n == 1: return 1
-    if n == 2: return 1
+for i in range(3, 10001):
+    dp[i] = dp[i - 1] + dp[i - 2]
 
-    fn1 = 1
-    fn2 = 1
-    fn = 0
-
-    for i in range(n - 2):
-        fn = fn1 + fn2
-        fn1 = fn2
-        fn2 = fn
-
-    return fn
-
-for i in range(int(input())):
+for i in range(T):
     p, q = map(int, input().split())
-    print(f"Case #{i+1}: {pivo(p) % q}")
+    print(f"Case #{i+1}: {dp[p] % q}")

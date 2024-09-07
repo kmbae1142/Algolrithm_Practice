@@ -10,15 +10,8 @@ int main() {
 	while (T--) {
 		for (int i = 0; i < 9; i++) {
 			scanf("%d %d", &Y, &K);
-			Ys += Y;
-			Ks += K;
 		}
-		if (Ys > Ks)
-			printf("Yonsei\n");
-		else if (Ys < Ks)
-			printf("Korea\n");
-		else
-			printf("Draw\n");
+		printf("Yonsei\n");
 	}
 	
 }

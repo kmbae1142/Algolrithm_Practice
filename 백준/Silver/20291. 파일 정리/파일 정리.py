@@ -11,7 +11,7 @@ for i in range(n):
     else:
         dic[str[-1]] = 1
 
-new_dic = sorted(dic.items(), key=lambda x: x[0])       
+new_dic = sorted(dic.items(), key=lambda x: x[0])
 
 for i, j in new_dic:
     print(i, j)

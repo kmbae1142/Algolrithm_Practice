@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 int num[1000000];
 
 int compare(const void* _n1, const void* _n2) {

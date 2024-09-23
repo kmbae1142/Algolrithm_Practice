@@ -1,6 +1,5 @@
 def solution(array, commands):
     answer = []
-    len_com = len(commands)
     
     for i in commands:
         array_split = array[i[0] - 1 : i[1]]

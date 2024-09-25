@@ -1,19 +1,33 @@
 #include <stdio.h>
-#include <string.h>
 
 int main() {
 
-    char note[16];
-    char ascend[16] = "1 2 3 4 5 6 7 8";
-    char descend[16] = "8 7 6 5 4 3 2 1";
+	int num[8];
+	int temp, mixed = 0;
 
-    fgets(note, sizeof(note), stdin);
+	for (int i = 0; i < 8; i++) {
+		scanf("%d", &num[i]);
+	}
 
-    if (strcmp(note, ascend) == 0)
-        printf("ascending\n");
-    else if (strcmp(note, descend) == 0)
-        printf("descending\n");
-    else
-        printf("mixed");
+	temp = num[1] - num[0];
+	for (int i = 1; i < 7; i++) {
+		if (num[i + 1] - num[i] == temp) {
+			continue;
+		}
+		else {
+			mixed = 1;
+			break;
+		}
+	}
+
+	if (mixed) {
+		printf("mixed");
+	}
+	else if (temp == 1) {
+		printf("ascending");
+	}
+	else {
+		printf("descending");
+	}
 
 }

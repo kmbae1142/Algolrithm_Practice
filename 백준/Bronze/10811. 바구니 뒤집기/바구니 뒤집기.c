@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void reverse(int* arr, int i, int j) {
+void reverse(int arr[], int i, int j) {
 
 	for (int k = 0; k <= (j - i) / 2; ++k) {
 		int temp = arr[j - k];
@@ -18,12 +18,10 @@ int main() {
 
 	scanf("%d %d", &n, &m);
 	
-	int* arr = (int*)malloc(sizeof(int) * n);
+	int arr[100] = {0,};
 
-	if (arr != NULL) {
-		for (int l = 0; l < n; ++l) {
-			arr[l] = l + 1;
-		}
+	for (int l = 0; l < n; ++l) {
+		arr[l] = l + 1;
 	}
 
 	for (int l = 0; l < m; ++l) {
@@ -32,9 +30,7 @@ int main() {
 	}
 
 	for (int l = 0; l < n; ++l) {
-		if (arr != NULL) {
-			printf("%d ", arr[l]);
-		}
+		printf("%d ", arr[l]);
 	}
 
 }

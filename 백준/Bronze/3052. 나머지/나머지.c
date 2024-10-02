@@ -1,35 +1,21 @@
 #include <stdio.h>
 
-
 int main() {
 
-    int num, temp, i = 0, j = 0;
-    int arr[10];
-    int arr_num = 0;
+	int num[10];
+	int rem[42] = { 0, };
+	int count = 0;
 
+	for (int i = 0; i < 10; i++) {
+		scanf("%d", &num[i]);
+		rem[num[i] % 42]++;
+	}
 
-    for (i = 0; i < 10; i++) {
-        scanf("%d", &num);
-        arr[i] = num % 42;
-    }
+	for (int i = 0; i < 42; i++) {
+		if (rem[i] != 0)
+			count++;
+	}
 
-    for (i = 0; i < 10; i++) {
-        for (j = 8; j >= i; j--) {
-            if (arr[j] > arr[j + 1]) {
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-
-    for (i = 0; i < 9; i++) {
-        if (arr[i] != arr[i + 1])
-            arr_num++;
-        else
-            continue;
-    }
-
-    printf("%d", arr_num + 1);
+	printf("%d", count);
 
 }

@@ -4,6 +4,7 @@
 int num[100000];
 
 int compare(const void* _n1, const void* _n2) {
+
     int* n1 = (int*)_n1;
     int* n2 = (int*)_n2;
 
@@ -13,38 +14,50 @@ int compare(const void* _n1, const void* _n2) {
         return -1;
     else
         return 0;
+
 }
 
-int twoPointer(int* num, int size, int x) {
-    int left = 0;
-    int right = size - 1;
-    int count = 0;
+int twoPointer(int* num, int size, int n) {
 
-    while (left < right) {
-        int sum = num[left] + num[right];
+	int left = 0;
+	int right = size - 1;
+	int count = 0;
 
-        if (sum == x) {
-            count++;
-            left++;
-            right--;
-        } else if (sum < x) {
-            left++;
-        } else {
-            right--;
-        }
-    }
+	while (left < right) {
 
-    return count;
+		int sum = num[left] + num[right];
+
+		if (sum > n) {
+			right--;
+		}
+
+		else if (sum < n) {
+			left++;
+		}
+
+		else if (sum == n) {
+			count++;
+			left++;
+			right--;
+		}
+
+	}
+
+	return count;
+
 }
 
 int main() {
-    int n, x;
-    scanf("%d", &n);
-    for (int i = 0; i < n; ++i) {
-        scanf("%d", &num[i]);
-    }
-    scanf("%d", &x);
 
-    qsort(num, n, sizeof(int), compare);
-    printf("%d", twoPointer(num, n, x));
+	int n, x;
+
+	scanf("%d", &n);
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &num[i]);
+	}
+	scanf("%d", &x);
+
+	qsort(num, n, sizeof(int), compare);
+	printf("%d", twoPointer(num, n, x)); 
+
 }

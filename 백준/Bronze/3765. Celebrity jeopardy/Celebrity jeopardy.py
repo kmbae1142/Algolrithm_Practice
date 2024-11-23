@@ -1,6 +1,5 @@
 while True:
     try:
-        sol = input()
-        print(sol)
+        print(input())
     except:
         break

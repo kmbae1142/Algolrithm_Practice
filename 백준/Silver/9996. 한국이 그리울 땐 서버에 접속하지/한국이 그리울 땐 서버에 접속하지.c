@@ -6,6 +6,7 @@ int main() {
 	int N, i = 0;
 	char pattern[103];
 	char temp[103];
+    char str[103];
 	char* delimiter = "*";
 	char* ptoken;
 	char* pattern_str[4];
@@ -27,7 +28,6 @@ int main() {
 	while (N--) {
 		i = 0;
 		int check = 0;
-        char str[103];
 		scanf("%s", str);
 		int len2 = strlen(str);
 

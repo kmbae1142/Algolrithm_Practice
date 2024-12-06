@@ -30,11 +30,11 @@ int main() {
 		int check = 0;
 		scanf("%s", str);
 		int len2 = strlen(str);
-
-		if (len2 == 1) {
-			printf("NE\n");
-			continue;
-		}
+        
+        if (len - 1 > len2) {
+	        printf("NE\n");
+	        continue;
+        }
 
 		if (len2 == len - 1) {
 			if (strcmp(temp, str) == 0) {
@@ -45,11 +45,6 @@ int main() {
 			}
 			continue;
 		}
-        
-        if (len - 1 > len2) {
-	        printf("NE\n");
-	        continue;
-        }
 
 		pattern_str[2] = pattern_str[1];
 		str[strlen(pattern_str[0])] = ' ';
